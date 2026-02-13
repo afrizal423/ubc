@@ -1,0 +1,98 @@
+:root {
+    --bs-primary: #00d2ff;
+    --bs-primary-rgb: 0, 210, 255;
+    --bs-success: #3ef193;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --hero-gradient: linear-gradient(rgba(0,0,0,0.7), rgba(15,17,19,1));
+}
+
+[data-bs-theme="light"] {
+    --bs-body-bg: #f8f9fa;
+    --bs-body-color: #212529;
+    --glass-bg: rgba(0, 0, 0, 0.03);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --hero-gradient: linear-gradient(rgba(255,255,255,0.8), rgba(248,249,250,1));
+}
+
+[data-bs-theme="dark"] {
+    --bs-body-bg: #0f1113;
+    --bs-body-color: #e9ecef;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --hero-gradient: linear-gradient(rgba(0,0,0,0.7), rgba(15,17,19,1));
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+/* Glassmorphism */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+/* Hero Enhancements */
+.hero-section {
+    background: var(--hero-gradient), url('https://images.unsplash.com/photo-1626225967045-2c390255979d?q=80&w=2070') center/cover;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Nav Blur */
+.navbar {
+    backdrop-filter: blur(15px);
+    background-color: rgba(var(--bs-body-bg-rgb), 0.8) !important;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    color: var(--bs-body-color);
+}
